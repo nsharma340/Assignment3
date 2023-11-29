@@ -118,6 +118,7 @@ This can be valuable information when analyzing the relationships between these 
 st.markdown("---")
 sidebar.header("Interactive Linear Regression", "Linear_Regression")
 drop=st.selectbox("What type of feature you want to choose?",options=("sqft_lot", "sqft_living", "yr_built"),index=0,help="Choose a feature option in dropdown")
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
     
 if drop=="sqft_lot":
@@ -158,9 +159,11 @@ elif drop=="sqft_living":
     st.pyplot(sqft_living)
     st.write("""A positive correlation (coefficient of 0.43) between sqft_living and price indicates a moderate positive relationship between the two variables:
      The positive value indicates there is a positive correlation. A value of 0 means no correlation, while +1/-1 indicate perfect positive/negative correlations.
-     So, a value of 0.43 is reasonably close to 0, indicating a moderate positive correlation. What this signifies is,  As the sqft_living increases, price also tends to increase on average. Bigger
+     So, a value of 0.43 is reasonably close to 0, indicating a moderate positive correlation.
+ What this signifies is,  As the sqft_living increases, price also tends to increase on average. Bigger
      homes sell for more. But the relationship is not extremely strong, since 0.43 is moderately distant from 1. There is some variance in price not explained directly by living space. Other factors
-     also significantly influence home price besides just size. Location, economic trends, interest rates etc. likely also play a role. So, in summary, a 0.43 correlation between sqft_living and price
+     also significantly influence home price besides just size. Location, economic trends, interest rates etc. likely also play a role.
+ So, in summary, a 0.43 correlation between sqft_living and price
      indicates that larger homes moderately tend to sell for more on average, but living space is not the only driver of home prices in this market.
      """)
 
@@ -181,9 +184,11 @@ elif drop=="yr_built":
     yr_built = plt.show()
     st.pyplot(yr_built)
     st.write("""A correlation coefficient of 0.02 between yr_built and price indicates almost no correlation between the two variables:
-       The value is very close to 0, which indicates no linear relationship. Positive values between 0 and 0.3 indicate a weak positive correlation. So, what this signifies is that knowing when the
+       The value is very close to 0, which indicates no linear relationship. Positive values between 0 and 0.3 indicate a weak positive correlation.
+ So, what this signifies is that knowing when the
        home was built does not help in predicting how much the home will sell for. The year built alone has minimal correlation with the final sales price. This also suggests factors like size,
-       neighborhood, renovations etc. matter more than age in determining prices. A home built in 1950 may sell for more than one built in 1995 depending on other attributes. In summary, a 0.02
+       neighborhood, renovations etc. matter more than age in determining prices. A home built in 1950 may sell for more than one built in 1995 depending on other attributes.
+ In summary, a 0.02
        correlation coefficient tells us that year built does not have a measurable correlation with sale price in this data. The age of the home alone cannot predict the final sales value well. """)
 
 
